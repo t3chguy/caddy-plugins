@@ -1,7 +1,8 @@
-ARG CADDY_VERSION=2.10.0
+ARG CADDY_VERSION=2.10.2
 FROM caddy:${CADDY_VERSION}-builder AS builder
 
 RUN xcaddy build \
+    --with github.com/sablierapp/sablier-caddy-plugin@v1.0.1 \
     --with github.com/lucaslorentz/caddy-docker-proxy/v2 \
     --with github.com/caddy-dns/cloudflare
 
